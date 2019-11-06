@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" Content="text/html;charset=UTF-8">
+
+<link rel="shortcut icon" href="https://lh3.googleusercontent.com/7N75Y6zLGvB08nuMYkwFslbcBEPk4ErsO2TY4wL21PbkvmcMSMoL-NI9bSJBX8uzDDprBoBa9zqxSyHb4262IREnoNaY4VBd-GYYEDD7NgG-4m1y9Hab6ubnUClQ_H0jRBVSgq57EkiG4sKgK-TTNBcRPOmtfcN0zgYHsS6rJ_gjwSVwOQboUDJ-WnPP7qeahQBweKL_I37XAP8szrenVO6xEmEGVfYhNUpZTO8leHOfVNiw3NdJMDgxQesZSsdQrP75ABK6pVcCHlPJQqmGDHvZb0VP92ofzH35aihlrUJanq-NBS2LniqieUL1jLx6sMOm6dDw3IQ5jomLdXHUVC9EYUfHa7LsjMz7lbzYZpdcNGfHypjySX55Vhh_pdHbpUl5KhaDHmHpKjzfAROGA-Kp_03iZ55-MPRmDX5B1V2wy9FZp6g3uE_SpxLS8q8YW6maQDQVvH0_vXtdVR5pGeK0T1G0U-fANpyMcp2OitB75u5_7DR5jSZutcgkjVxlq73kB3qIlg8ybNTkpus8TgbK4caqPbFSqxZIozlX14IDCDd06bIMH0kd8toz-llg0hHg2NjCZvrG6T962guw3KcbKh_12Q_kUHqFNIqldzx9r6npnDa45jPpPfQo1Y8Z093z9H3gFOsiICIAZW-Noj_ToB8oViZ_g_Vu_YvopYH1zbkdHFbVWgzUWkXczc1L4h41WXSyCDgt6XMZxJQGFc0Sn56cHr35UN-YZuFJdD3AYCw=s48-no"/>
+<link rel="icon" type="https://lh3.googleusercontent.com/pjjFIO1lFgOSsHfdHEbUjzz9uiPyzyPsiz6iv6xeBf8qygcbkRIY0R4xgEBwXJ36YYK7NgZChFjYokJS_s2UWvOr2Pzb2mNLJPStYZS7yA4vvHKA7t6lFtgb4X7pxLTPpmU_2m9OimZ9TzvhKZzXWTAmt77wcPaXb5kWEKlTsJ57Km-O_VevwU3ssEDOyonYMlBgshplIfaFucRuGQbM7BtPNq-fC-FByNo6K5nHAti1f1LIE3E44SYUqiVTgtMSrVLNCdfivD_-WbVtH2GzQWd9ieuwclRGUjj_y29flK9NcXB_CMNLxu0qJH7S7W9mOAA-xP2nXl8uDxDRobv5LMgAG4pBlRT9FNRa7WWBUVplvhu-xI_ZXR_Rt6-fpyxIRT137pltbkKEK34BSIVg123pD5UXfxvOXPwiD41aHnER2uQx5CVRoD_zqcOAi3_sn07ZZWivFBmQhskHCHUv8FSwJAbkHyI-DxhAL3rMf0h_fGKAgkprPQnMy7lvjqLGQphEC4NOZnMhLhz2MKIg_79mDruIwDXSQpHDUXkijuhYlDhcpRd9w-hkHzWPv6WPlZOBSeq2qZWmRzUE9250bqVPRUxenbn8eT_ljVKQwgFr5kvolEOzMszNz0jRcDxoD9NOFUQcHB0efXufAsnjyl18L54KdzXUJytv5am6_wp_oHSHBv_tH2Ra27-z_gK5gXafQWgiB2CssR3M1cIjfPsnWveva0cxny06RKm8aWmCnbw=s48-no" href="liadl.gif"/>
+
+<title>建築設計規劃基地暨整體造型展示</title> 
+<!--
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, user-scalable=no" />
+-->
+<style>
+  body {
+	margin: 0px;
+	overflow: hidden;
+  }
+  #container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+  }
+	#modal{display:none;}
+	.lt-cell {
+		background: #A9D0F5;
+		font-size: x-large;
+		font-weight: bold;
+	}
+	.lt-cell:hover{
+		background: #F7BE81;
+		font-size: x-large;
+		font-weight: bold;
+	}
+	.modalBody{position: fixed; z-index:1000; background: #FFFFFF; width:80%; left:10%; top:10%; height: 80%}
+	.modalBK{position: fixed; z-index:999; height:100%; width:100%;background:#000; opacity: 0.9;filter: alpha(opacity=60);-moz-opacity:0.60;}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77043753-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body style="overflow: hidden;height: 100%;">
+<div id="modal">
+	<div class="modalBody"><p id="sceneselect" ></p></div>
+	<div class="modalBK" onclick='document.getElementById("modal").style.display="none";'></div>
+</div>
+  <div id="container"></div>
+
+		  <script src="three.min.js"></script>
+		  <script src="OrbitControlsTH.min.js"></script>
+		  <script src='DAT.GUI.min.js'></script>
+		  <script src="indexgeom.js"></script>
+		
+<script type="x-shader/x-vertex" id="vertexShader">
+	varying vec3 vWorldPosition;
+	void main() {
+		vec4 worldPosition = modelMatrix * vec4( position, 1.0 );
+		vWorldPosition = worldPosition.xyz;
+		gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+	}
+</script>
+<script type="x-shader/x-fragment" id="fragmentShader">
+	uniform vec3 topColor;
+	uniform vec3 bottomColor;
+	uniform float offset;
+	uniform float exponent;
+	varying vec3 vWorldPosition;
+	void main() {
+		float h = normalize( vWorldPosition + offset ).y;
+		gl_FragColor = vec4( mix( bottomColor, topColor, max( pow( max( h , 0.0), exponent ), 0.0 ) ), 1.0 );
+	}
+</script>
+<script id="main_wgl" type="text/javascript" >
+	var materials = [];
+	var clipMAX = 100.0;
+	var clipMIN = 0.0;
+	var camera,headlight;
+	main_wgl();
+	init();
+	render();
+	function scenechange(cpos,ctgt,fov){
+		camera.fov = fov;
+		controls.object.position.set(cpos[0],cpos[1],cpos[2]);
+		controls.target = new THREE.Vector3(ctgt[0],ctgt[1],ctgt[2] ); 
+		document.getElementById("modal").style.display="none";
+		camera.updateProjectionMatrix();
+	}
+	function init() {
+    if (window.WebGLRenderingContext) {
+        renderer = new THREE.WebGLRenderer({ antialias: true });
+    } else {
+        renderer = new THREE.CanvasRenderer();
+    }
+	var chk_tex_ok = false;
+	aspr = window.innerWidth/ window.innerHeight;
+    renderer.setPixelRatio( window.devicePixelRatio );
+	renderer.setSize( window.innerWidth, window.innerHeight );
+    document.getElementById('container').appendChild(renderer.domElement);
+    renderer.setClearColor(0x606069, 1.0);
+	renderer.autoClear = false;
+	renderer.shadowMap.enabled = true;
+	renderer.shadowMap.type = THREE.PCFShadowMap;
+    scene = new THREE.Scene();
+	var scene_length = 2892967;
+    camera = new THREE.PerspectiveCamera(48.4554906359084, aspr, 10, scene_length);
+    scene.add(camera);
+    light1 = new THREE.AmbientLight(0xbbbbbb);
+    scene.add( light1 );
+    light2 = new THREE.DirectionalLight(0xcccccc, 1.0);
+	tpos =new THREE.Vector3( 46432.41656616288,25439.05144010098,2608.1544761134646 );
+	sunvec = new THREE.Vector3( 0.6911335637934969,0.7151230043002235,-0.10456330962016698 );
+	sunvec.setLength( scene_length / 2 );
+    light2.position.set(sunvec.x + tpos.x , sunvec.y + tpos.y, sunvec.z + tpos.z);
+	light2.target.position.set(tpos);
+	light2.castShadow = true;
+	light2.shadowCameraNear = scene_length / 2 * 0.85;
+	light2.shadowCameraFar = scene_length / 2 * 1.15;
+	light2.shadowCameraRight = scene_length/15;
+	light2.shadowCameraLeft = -scene_length/15;
+	light2.shadowCameraTop	= scene_length/15;
+	light2.shadowCameraBottom = -scene_length/15;
+	light2.shadowCameraFov = 1.0;
+	light2.shadowCameraVisible = true;
+	light2.shadowBias = 0.0001;
+	light2.shadowMapWidth = 2048;
+	light2.shadowMapHeight = 2048;
+    scene.add( light2 );
+    light3 = new THREE.DirectionalLight(0x333333, 1.0);
+    light3.position.set(-sunvec.x,-sunvec.y,-sunvec.z);
+    scene.add( light3 );
+    headlight = new THREE.DirectionalLight(0x333333, 1.0);
+    headlight.position.set(0, 0, 0);
+    scene.add( headlight );
+	hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.1 );
+	hemiLight.color.setHSL( 0.6, 1, 0.6 );
+	hemiLight.groundColor.setHSL( 0.095, 1, 0.75 );
+	hemiLight.position.set( 0, 0, 0 );
+	scene.add( hemiLight );
+	// SKYDOME
+	var vertexShader = document.getElementById( 'vertexShader' ).textContent;
+	var fragmentShader = document.getElementById( 'fragmentShader' ).textContent;
+	var uniforms = {
+		topColor: 	 { type: "c", value: new THREE.Color( 0x0077ff ) },
+		bottomColor: { type: "c", value: new THREE.Color( 0xffffff ) },
+		offset:		 { type: "f", value: 33 },
+		exponent:	 { type: "f", value: 0.6 }
+	};
+	uniforms.topColor.value.copy( hemiLight.color );
+	//scene.fog.color.copy( uniforms.bottomColor.value );
+	var skyGeo = new THREE.SphereGeometry( scene_length/2, 32, 15 );
+	skyGeo.translate(tpos.x,tpos.y,tpos.z);
+	var skyMat = new THREE.ShaderMaterial( { vertexShader: vertexShader, fragmentShader: fragmentShader, uniforms: uniforms, side: THREE.BackSide } );
+	var sky = new THREE.Mesh( skyGeo, skyMat );
+	scene.add( sky );
+    // init controls : use OrbitControls.js
+	controls = new THREE.OrbitControlsTH(camera, renderer.domElement);
+	controls.userZoom = true;
+	controls.userZoomSpeed = 1.0;
+	controls.userRotate = true;
+	controls.userRotateSpeed = 1.0;
+	controls.userPan = true;
+	controls.userPanSpeed = 1.0;
+	controls.autoRotate = false;
+	controls.autoRotateSpeed = 1.0;
+	controls.minPolarAngle = 0; 
+	controls.maxPolarAngle = Math.PI; 
+	controls.minDistance = 0;
+	controls.maxDistance = Infinity;
+	controls.object.position.set( 71970.686,8100.976,84104.403 );
+	controls.target = new THREE.Vector3( 8310.220,9022.687,13387.955 ); 
+	controls.lookaround = false;
+	controls.flyspeed = 50;
+	
+	var mrot = new THREE.Matrix4();
+	mrot.makeRotationX(-Math.PI/2);
+	
+	
+    // init materials
+	codeclips = "vec3 clipDIST = vec3( 181771.304,104714.690,199215.026 ) + vec3(40,40,40);vec3 clipBASE = vec3( -44453.235,-26918.294,-96999.359 ) - vec3(20,20,20);"
+    for(var i=0; i < mat.length; i++){
+     materials[i] = new THREE.ShaderMaterial( {
+		uniforms: THREE.UniformsUtils.merge([
+			THREE.UniformsLib[ "common" ],
+			//THREE.UniformsLib[ "fog" ],
+			THREE.UniformsLib[ "lights" ],
+			THREE.UniformsLib[ "shadowmap" ],
+			{
+			usemap : { type : "i" , value : 0 },
+			clipmaxX: { type: 'f', value: clipMAX },
+			clipminX: { type: 'f', value: clipMIN },
+			clipmaxY: { type: 'f', value: clipMAX },
+			clipminY: { type: 'f', value: clipMIN },
+			clipmaxZ: { type: 'f', value: clipMAX },
+			clipminZ: { type: 'f', value: clipMIN },
+			opacity: { type: 'f', value: mat[i][1] },
+			alphatest: { type: 'f', value: 0.0 },
+			use_clipping: { type: 'i', value: 1 },
+			diffuse: { type: 'c', value: new THREE.Color(mat[i][0]) },
+			emissive : { type: "c", value: new THREE.Color( 0x000000 ) }
+		}]),
+		vertexShader: [	
+			THREE.ShaderChunk[ "common" ],
+			"varying vec3 mdpos;","varying vec3 vLightFront;",
+			"#ifdef DOUBLE_SIDED","	varying vec3 vLightBack;","#endif",
+			"varying vec2 vUv;",
+			"uniform vec4 offsetRepeat;",
+			THREE.ShaderChunk[ "lights_lambert_pars_vertex" ],
+			THREE.ShaderChunk[ "color_pars_vertex" ],
+			THREE.ShaderChunk[ "shadowmap_pars_vertex" ],
+			"void main() {",
+				"vUv = uv * offsetRepeat.zw + offsetRepeat.xy;",
+				THREE.ShaderChunk[ "color_vertex" ],
+				THREE.ShaderChunk[ "beginnormal_vertex" ],
+				THREE.ShaderChunk[ "defaultnormal_vertex" ],
+				THREE.ShaderChunk[ "begin_vertex" ],
+				THREE.ShaderChunk[ "project_vertex" ],
+				THREE.ShaderChunk[ "worldpos_vertex" ],
+				THREE.ShaderChunk[ "envmap_vertex" ],
+				THREE.ShaderChunk[ "lights_lambert_vertex" ],
+				THREE.ShaderChunk[ "shadowmap_vertex" ],
+			"mdpos = vec3(position);}"
+		].join( "\n" ),
+		fragmentShader: [
+			"uniform float clipmaxX;", "uniform float clipminX;", "uniform float clipmaxY;", "uniform float clipminY;", "uniform float clipmaxZ;", "uniform float clipminZ;","uniform int use_clipping;",
+			"varying vec3 mdpos;",
+			"uniform vec3 diffuse;","uniform vec3 emissive;","uniform float opacity;","uniform vec3 ambientLightColor;","varying vec3 vLightFront;","#ifdef DOUBLE_SIDED","	varying vec3 vLightBack;","#endif",
+			"varying vec2 vUv;",
+			"uniform sampler2D map;",
+			"uniform int usemap;",
+			"uniform float alphatest;",
+			THREE.ShaderChunk[ "common" ],
+			THREE.ShaderChunk[ "color_pars_fragment" ],
+			THREE.ShaderChunk[ "alphamap_pars_fragment" ],
+			THREE.ShaderChunk[ "shadowmap_pars_fragment" ],
+			codeclips,
+			"void main() {",
+			"	vec3 outgoingLight = vec3( 0.0 );",
+			"	vec4 diffuseColor = vec4( diffuse, opacity );",
+			"	vec3 totalAmbientLight = ambientLightColor;",
+			"	vec3 shadowMask = vec3( 1.0 );",
+			THREE.ShaderChunk[ "logdepthbuf_fragment" ],
+			"if( usemap == 1 ){",
+			"vec4 texelColor = texture2D( map, vUv );",
+			"texelColor.xyz = inputToLinear( texelColor.xyz );",
+			"diffuseColor *= texelColor;}",
+			THREE.ShaderChunk[ "color_fragment" ],
+			THREE.ShaderChunk[ "alphamap_fragment" ],
+			"if( alphatest > 0.0 && diffuseColor.a < alphatest ){ discard;}",
+			THREE.ShaderChunk[ "shadowmap_fragment" ],
+			"	#ifdef DOUBLE_SIDED",
+			"		if ( gl_FrontFacing )",
+			"			outgoingLight += diffuseColor.rgb * ( vLightFront * shadowMask + totalAmbientLight ) + emissive;",
+			"		else",
+			"			outgoingLight += diffuseColor.rgb * ( vLightBack * shadowMask + totalAmbientLight ) + emissive;",
+			"	#else",
+			"		outgoingLight += diffuseColor.rgb * ( vLightFront * shadowMask + totalAmbientLight ) + emissive;",
+			"	#endif",
+			THREE.ShaderChunk[ "linear_to_gamma_fragment" ],
+			"if( use_clipping == 1 ){",
+			"	vec3 clipmax = clipDIST * vec3( clipmaxX , clipmaxY , clipmaxZ ) * 0.01 + clipBASE;",
+			"	vec3 clipmin = clipDIST * vec3( clipminX , clipminY , clipminZ ) * 0.01 + clipBASE;",
+			"	vec3 linemax = clipDIST * vec3( clipmaxX , clipmaxY , clipmaxZ ) * 0.01 + clipBASE - vec3( 10,10,10 );",
+			"	vec3 linemin = clipDIST * vec3( clipminX , clipminY , clipminZ ) * 0.01 + clipBASE + vec3( 10,10,10 );",
+			"	if( any(lessThan( clipmax,mdpos )) || any(lessThan( mdpos,clipmin )) ){",
+			"		discard;",
+			"	}else if( any(lessThan( linemax,mdpos )) || any(lessThan( mdpos,linemin )) ){",
+			"		gl_FragColor = vec4( outgoingLight, 1.0 ) * vec4(1.0,0.3,0.3,1.0);",
+			"	}else{",
+			"		gl_FragColor = vec4( outgoingLight, diffuseColor.a );",
+			"	}",
+			"}else{",
+			"	gl_FragColor = vec4( outgoingLight, diffuseColor.a );",
+			"}",
+			"}"
+		].join( "\n" )
+	  });
+		if(mat[i][2] !="" ){
+			var texture  = new THREE.ImageUtils.loadTexture(tex[i]);
+			texture.magFilter = THREE.NearestFilter;
+			texture.minFilter = THREE.NearestFilter;
+			texture.wrapS = THREE.RepeatWrapping;
+			texture.wrapT = THREE.RepeatWrapping;
+			//texture.repeat.set( mat[i][4] ,mat[i][5]);
+			materials[i].uniforms.map.value = texture;
+			if( mat[i][2] == "png" || mat[i][2] =="gif" ){
+				materials[i].uniforms.alphatest.value = 0.5;
+			}
+		}
+		if(mat[i][1] < 1.0){
+			materials[i].transparent = true;
+			materials[i].blending = THREE.NormalBlending;
+		}
+        materials[i].side = THREE.DoubleSide;
+		materials[i].lights = true;
+    }
+	linemat = new THREE.ShaderMaterial( {
+		vertexShader: "varying vec3 mdpos;void main() {mdpos = vec3(position);gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);}",
+		fragmentShader: [
+			"uniform float clipmaxX;", "uniform float clipminX;", "uniform float clipmaxY;", "uniform float clipminY;", "uniform float clipmaxZ;", "uniform float clipminZ;","uniform int use_clipping;",
+			"uniform vec3 diffuse;",
+			"varying vec3 mdpos;",
+			codeclips,
+			"void main() {",
+			"if( use_clipping == 1 ){",
+			"	vec3 clipmax = clipDIST * vec3( clipmaxX , clipmaxY , clipmaxZ ) * 0.01 + clipBASE;",
+			"	vec3 clipmin = clipDIST * vec3( clipminX , clipminY , clipminZ ) * 0.01 + clipBASE;",
+			"	vec3 linemax = clipDIST * vec3( clipmaxX , clipmaxY , clipmaxZ ) * 0.01 + clipBASE - vec3( 10,10,10 );",
+			"	vec3 linemin = clipDIST * vec3( clipminX , clipminY , clipminZ ) * 0.01 + clipBASE + vec3( 10,10,10 );",
+			"	if( any(lessThan( clipmax,mdpos )) || any(lessThan( mdpos,clipmin )) ){",
+			"		discard;",
+			"	}else if( any(lessThan( linemax,mdpos )) || any(lessThan( mdpos,linemin )) ){",
+			"		gl_FragColor = vec4( diffuse, 1.0 ) * vec4(1.0,0.3,0.3,1.0);",
+			"	}else{",
+			"		gl_FragColor = vec4( diffuse, 1.0 );",
+			"	}",
+			"}else{",
+			"	gl_FragColor = vec4( diffuse, 1.0 );",
+			"}",
+			"}"
+		].join( "\n" ),
+		uniforms: {
+			clipmaxX: { type: 'f', value: clipMAX },
+			clipminX: { type: 'f', value: clipMIN },
+			clipmaxY: { type: 'f', value: clipMAX },
+			clipminY: { type: 'f', value: clipMIN },
+			clipmaxZ: { type: 'f', value: clipMAX },
+			clipminZ: { type: 'f', value: clipMIN },
+			opacity: { type: 'f', value: 1.0 },
+			use_clipping: { type: 'i', value: 1 },
+			diffuse: { type: 'c', value: new THREE.Color( 0x000000 ) },
+			emissive : { type: "c", value: new THREE.Color( 0x000000 ) }
+		},
+			linewidth:2
+	} );
+	materials.push( linemat);
+	
+	for(var k = 0;k < ngeom	; k++){
+	for(var l = 0;l < inslist[k].nins;l++){
+	var dfmatid = inslist[k].props[l].dfmat;
+	var uscale = mat[dfmatid][4];
+	var vscale = mat[dfmatid][5];
+	var matrix = new THREE.Matrix4();
+	var mtx = inslist[k].props[l].matrix;
+	matrix.set(
+	mtx[0]/mtx[15],mtx[4]/mtx[15],mtx[8]/mtx[15],mtx[12]/mtx[15],
+	mtx[1]/mtx[15],mtx[5]/mtx[15],mtx[9]/mtx[15],mtx[13]/mtx[15],
+	mtx[2]/mtx[15],mtx[6]/mtx[15],mtx[10]/mtx[15],mtx[14]/mtx[15],
+	mtx[3]/mtx[15],mtx[7]/mtx[15],mtx[11]/mtx[15],1.0
+	);
+    var geom, vt,vt2, fc, mface,fst,vst;
+    geom = new THREE.Geometry();
+    for(var j=0; j < geomlist[k].nv; j++){
+	  vst = geomlist[k].v[j].split(",");//
+      vt = new THREE.Vector3(parseInt(vst[0],36)/Math.pow(10,prec),parseInt(vst[1],36)/Math.pow(10,prec),parseInt(vst[2],36)/Math.pow(10,prec));
+      geom.vertices.push(vt);
+    }
+    for(var j=0; j < geomlist[k].nf; j++){
+		fst = geomlist[k].f[j].split(",")
+		if( use_texture == true ){
+			var uvst = [];
+			for(var m=0;m < 3;m++){
+				uvst[m] = geomlist[k].uv[j][m].split(",");
+			}
+		}
+		var mati = geomlist[k].mti[j];
+		if( mati == 0 ){ //mati = dfmatid; }
+			fc = new THREE.Face3( parseInt(fst[0], 36), parseInt(fst[1], 36), parseInt(fst[2], 36), null, null, dfmatid );
+			geom.faces.push(fc);
+			if( use_texture == true ){
+				geom.faceVertexUvs[0].push( [
+				  new THREE.Vector2(parseInt(uvst[0][0], 36)/Math.pow(10,prec) * uscale, parseInt(uvst[0][1], 36)/Math.pow(10,prec) * vscale),
+				  new THREE.Vector2(parseInt(uvst[1][0], 36)/Math.pow(10,prec) * uscale, parseInt(uvst[1][1], 36)/Math.pow(10,prec) * vscale),
+				  new THREE.Vector2(parseInt(uvst[2][0], 36)/Math.pow(10,prec) * uscale, parseInt(uvst[2][1], 36)/Math.pow(10,prec) * vscale)]
+				);
+			}
+		}else{
+			fc = new THREE.Face3( parseInt(fst[0], 36), parseInt(fst[1], 36), parseInt(fst[2], 36), null, null, mati );
+			geom.faces.push(fc);
+			if( use_texture == true ){
+				geom.faceVertexUvs[0].push( [
+				  new THREE.Vector2(parseInt(uvst[0][0], 36)/Math.pow(10,prec), parseInt(uvst[0][1], 36)/Math.pow(10,prec)),
+				  new THREE.Vector2(parseInt(uvst[1][0], 36)/Math.pow(10,prec), parseInt(uvst[1][1], 36)/Math.pow(10,prec)),
+				  new THREE.Vector2(parseInt(uvst[2][0], 36)/Math.pow(10,prec), parseInt(uvst[2][1], 36)/Math.pow(10,prec))]
+				);
+			}
+		}
+    }
+	geom.applyMatrix(matrix);
+	geom.applyMatrix(mrot);
+    geom.computeFaceNormals();
+    mface = new THREE.Mesh(geom, new THREE.MeshFaceMaterial(materials));
+	mface.castShadow = true;
+	mface.receiveShadow = true;
+    scene.add( mface );
+	var edgeom = new THREE.Geometry();
+    for(var j=0; j < geomlist[k].ne; j++){
+		if(geomlist[k].ed[j]){
+		edst = geomlist[k].ed[j].split(",")
+		vst = geomlist[k].v[parseInt(edst[0], 36)].split(",");//
+		edgeom.vertices.push( new THREE.Vector3(parseInt(vst[0],36)/Math.pow(10,prec),parseInt(vst[1],36)/Math.pow(10,prec),parseInt(vst[2],36)/Math.pow(10,prec)) );
+		vst = geomlist[k].v[parseInt(edst[1], 36)].split(",");//
+		edgeom.vertices.push( new THREE.Vector3(parseInt(vst[0],36)/Math.pow(10,prec),parseInt(vst[1],36)/Math.pow(10,prec),parseInt(vst[2],36)/Math.pow(10,prec)) );
+		}
+    }
+	edgeom.applyMatrix(matrix);
+	edgeom.applyMatrix(mrot);
+	//edgeom.translate(mtx[12],-mtx[13],-mtx[14]);
+	var lines = new THREE.LineSegments( edgeom,linemat );
+	scene.add( lines );
+}
+}
+	texture_show( true);
+	add_gui();
+    // 画面リサイズ時のイベント
+    window.addEventListener( 'resize', onWindowResize, false );
+}
+function add_gui(){
+var SUPPORTS_LOCAL_STORAGE = (function() { try { return 'localStorage' in window && window['localStorage']; } catch (e) { return false; } })();
+if( SUPPORTS_LOCAL_STORAGE ){
+	var gui = new dat.GUI();
+	parameters = {
+		Scene_Select: function(){document.getElementById('modal').style.display="block";},
+		lookaround:false,
+		textureon:true,
+		useclip:true,
+		useshadow:true,
+		ambicolor: "#bbbbbb",
+		suncolor: "#cccccc",
+		subcolor: "#cccccc",
+		headcolor: "#cccccc",
+		flyspeed:50,
+		gclipxmax:1.0,
+		gclipxmin:1.0,
+		gclipymax:1.0,
+		gclipymin:1.0,
+		gclipzmax:1.0,
+		gclipzmin:1.0
+	};
+	var skpage = gui.add( parameters, 'Scene_Select');
+	scenetable = '<table border="5" bordercolor="#ffffff" style="table-layout:fixed;" width="100%" height="100%"><tr>'
++ '<td class="lt-cell" onclick="scenechange([137318.068,77796.396,102215.667],[46432.417,25439.051,2608.154],45)">OrbitView</td>'
++ '<td class="lt-cell" onclick="scenechange([71970.686,8100.976,84104.403],[8310.220,9022.687,13387.955],48.4554906359084)"><img border="0" src="data:image/jpg;base64,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" alt="Scene 1">Scene 1</td>'
++ '</tr></table>';
+	document.getElementById('sceneselect').innerHTML = scenetable;
+	var sklookaround = gui.add( parameters, 'lookaround' ).name('LOOK AROUND').listen();
+	sklookaround.onChange(function(value){   controls.lookaround = value;  	});
+	var skflyspeed = gui.add( parameters, 'flyspeed' , 1 , 100).name('Fly Speed').listen();
+	skflyspeed.onChange(function(value){   controls.flyspeed = value;  	});
+	var sktextureon = gui.add( parameters, 'textureon' ).name('Texture ON/OFF').listen();
+	sktextureon.onChange(function(value){   texture_show( value);  	});
+	var skshadowon = gui.add( parameters, 'useshadow' ).name('Sun Shadow ON/OFF').listen();
+	skshadowon.onChange(function(value){
+		renderer.shadowMapEnabled = value;
+		for(var i=0; i < materials.length; i++){materials[i].needsUpdate=true;}
+	});
+	var f_clips = gui.addFolder('CLIP PLANE');
+	var skuseclip = f_clips.add( parameters, 'useclip' ).name('USE CLIPPING').listen();
+	skuseclip.onChange(function(value){
+		for(var i=0; i < materials.length; i++){
+			materials[i].uniforms.use_clipping.value = value;
+		}
+	});
+	var skclipxmax = f_clips.add( parameters, 'gclipxmax' , clipMIN , clipMAX).name('CLIP X MAX').listen();
+	skclipxmax.onChange(function(value){
+		for(var i=0; i < materials.length; i++){
+			materials[i].uniforms.clipmaxX.value = value;
+		}
+	});
+	var skclipxmin = f_clips.add( parameters, 'gclipxmin' , clipMIN , clipMAX).name('CLIP X MIN').listen();
+	skclipxmin.onChange(function(value){
+		for(var i=0; i < materials.length; i++){
+			materials[i].uniforms.clipminX.value = value;
+		}
+	});
+	
+	var skclipzmax = f_clips.add( parameters, 'gclipzmax' , clipMIN , clipMAX).name('CLIP Y MAX').listen();
+	skclipzmax.onChange(function(value){
+		for(var i=0; i < materials.length; i++){
+			materials[i].uniforms.clipmaxZ.value = value;
+		}
+	});
+	var skclipzmin = f_clips.add( parameters, 'gclipzmin' , clipMIN , clipMAX).name('CLIP Y MIN').listen();
+	skclipzmin.onChange(function(value){
+		for(var i=0; i < materials.length; i++){
+			materials[i].uniforms.clipminZ.value = value;
+		}
+	});
+
+	var skclipymax = f_clips.add( parameters, 'gclipymax' , clipMIN , clipMAX).name('CLIP Z MAX').listen();
+	skclipymax.onChange(function(value){
+		for(var i=0; i < materials.length; i++){
+			materials[i].uniforms.clipmaxY.value = value;
+		}
+	});
+	var skclipymin = f_clips.add( parameters, 'gclipymin' , clipMIN , clipMAX).name('CLIP Z MIN').listen();
+	skclipymin.onChange(function(value){
+		for(var i=0; i < materials.length; i++){
+			materials[i].uniforms.clipminY.value = value;
+		}
+	});
+	var f_lights = gui.addFolder('LIGHTS');
+	var sklight1 = f_lights.addColor( parameters, 'ambicolor' ).name('AMBIENT LIGHT').listen();
+	sklight1.onChange(function(value){   light1.color = new THREE.Color(value);  	});
+	var sklight2 = f_lights.addColor( parameters, 'suncolor' ).name('SUN LIGHT').listen();
+	sklight2.onChange(function(value){   light2.color = new THREE.Color(value);  	});
+	var sklight3 = f_lights.addColor( parameters, 'subcolor' ).name('SUB LIGHT').listen();
+	sklight3.onChange(function(value){   light3.color = new THREE.Color(value);  	});
+	var sklight4 = f_lights.addColor( parameters, 'headcolor' ).name('HEAD LIGHT').listen();
+	sklight4.onChange(function(value){   headlight.color = new THREE.Color(value);  	});
+	gui.open();
+	f_clips.open;
+	parameters.gclipxmax = clipMAX;
+	parameters.gclipymax = clipMAX;
+	parameters.gclipzmax = clipMAX;
+	parameters.gclipxmin = clipMIN;
+	parameters.gclipymin = clipMIN;
+	parameters.gclipzmin = clipMIN;
+
+}
+}
+// ウィンドウリサイズ時の動作
+function onWindowResize() {
+  var width = container.offsetWidth;
+  var height = container.offsetHeight;
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+  renderer.setSize(width, height);
+  //effect.setSize(width, height);
+}
+function texture_show(chk){
+    for(var i=0; i < mat.length; i++){
+      if (mat[i][2] != ""){
+        // texture付material：画像をLoad
+		if(chk){
+			materials[i].uniforms.usemap.value = 1;
+			//materials[i].overdraw = true;
+			materials[i].needsUpdate = true;
+		}else{
+			materials[i].uniforms.usemap.value = 0;
+			//materials[i].overdraw = true;
+			materials[i].needsUpdate = true;
+		}
+      }
+    }
+}
+  // 
+  function render() {
+    requestAnimationFrame(render);
+    controls.update();
+    renderer.render(scene, camera);
+  }
+
+</script>
+
+</body></html>
